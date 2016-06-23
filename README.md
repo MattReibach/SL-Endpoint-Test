@@ -7,7 +7,7 @@ This app is built on GitHub's [Electron](http://electron.atom.io/) which allows 
 The basic app was bootstrapped using the [Electron Quick Start Tutorial](http://electron.atom.io/docs/tutorial/quick-start/).  The app also utilizes [Photon](http://photonkit.com/) which is a nice CSS library that allows you to easily style Electron apps to look like native OSX applications.
 
 ##Usage##
-Download or clone the repository, then open a command line or terminal and navigate to the repository folder.  Install the required dependencies with the `npm install` command.  Once the dependencies are installed, you can start the application using the `npm start` or alternately `electron .` in the command line.
+Download or clone the repository, then open a command line or terminal and navigate to the repository folder.  Install the required dependencies with the `npm install` command.  Once the dependencies are installed, you can start the application using the `npm start` command or alternately `electron .` in the command line.
 
 To use the application, enter the URL you are trying to test.  The application can be used to test an endpoint that is being run locally, or one that has been already deployed.  Before running the test, please ensure that there is nothing preventing a connection from your local environment to your endpoint URL, such as a firewall.
 
