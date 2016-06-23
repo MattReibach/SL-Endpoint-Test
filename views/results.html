@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/photon.min.css">
+
+    <!-- Javascript -->
+    <script src="../node_modules/angular/angular.js"></script>
+    <script src="../js/results.js" charset="utf-8"></script>
+</head>
+
+<body ng-app="results-app">
+    <div class="window" ng-controller="ResultsCtrl as vm">
+        <!-- Your app's content goes inside .window-content -->
+        <div class="window-content">
+            <table class="table-striped">
+                <thead>
+                    <tr>
+                        <th>HTTP Response</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="result in vm.results">
+                        <td>{{result.status + ' ' + result.statusText}}</td>
+                        
+                        <td>{{result.data}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

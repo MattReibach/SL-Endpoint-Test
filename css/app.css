@@ -1,0 +1,9 @@
+form {
+    padding: 10px;
+    margin: 10px;
+    width: 380px;
+}
+
+body > div > div > form > div > label {
+    font-size: 15px;
+}

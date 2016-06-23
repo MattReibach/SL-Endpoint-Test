@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SocketLabs Endpoint Tester</title>
+
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/photon.min.css">
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/notificationFactory.js"></script>
+    <script src="js/api.js"></script>
+</head>
+
+<body ng-app="main-app">
+    <div class="window" ng-controller="MainCtrl as vm">
+        <div class="window-content">
+            <form style="width: 380px;">
+                <div class="form-group">
+                    <label>Endpoint URL</label>
+                    <input class="form-control" ng-model="vm.endpointUrl" placeholder="http://localhost:3000/notifications">
+                </div>
+                <div class="form-group">
+                    <label>ServerID</label>
+                    <input class="form-control" ng-model="vm.serverId" type="number" min="1000" placeholder="1000">
+                </div>
+                <div class="form-group">
+                    <label>Secret Key</label>
+                    <input class="form-control" ng-model="vm.secretKey" placeholder="YOUR-SECRET-KEY">
+                </div>
+                <div class="form-group">
+                    <label>Number of Requests to Send</label>
+                    <select class="form-control" ng-model="vm.requests">
+                        <option>1</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>50</option>
+                        <option>100</option>
+                        <option>250</option>
+                        <option>500</option>
+                        <option>1000</option>
+                    </select>
+                </div>
+                <div>
+                    <label>Endpoint Type</label>
+                </div>
+                <div class="form-group">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="vm.endpoint.type" value="notification">Notification API
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" ng-model="vm.endpoint.type" value="inbound">Inbound Parse API
+                        </label>
+                    </div>
+                </div>
+                <div ng-show="vm.endpoint.type === 'notification'" class="">
+                    <label>Event Type</label>
+                    <select class="form-control" ng-options="event for event in vm.notificationEvents" ng-model="vm.eventType"></select>
+                </div>
+                <br>
+                <button class="btn btn-large btn-negative" ng-click="vm.handlePost()">POST</button>
+                <button class="btn btn-large btn-positive" ng-show="vm.results.length > 0" ng-click="vm.toggleWindow()">View Results</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
